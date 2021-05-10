@@ -10,9 +10,9 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 add_library(lib1 Account.h Account.cpp)
 add_library(lib2 Transaction.h Transaction.cpp)
-add_executable(runUnitTests tests/test.cpp)
+add_executable(runUnitTests test.cpp)
 
 target_link_libraries(runUnitTests gtest gtest_main)
 add_test( runUnitTests runUnitTests )
-target_compile_options(runUnitTests PRIVATE --coverage)
-target_link_libraries(runUnitTests PRIVATE --coverage)
+#target_compile_options(runUnitTests PRIVATE --coverage)
+#target_link_libraries(runUnitTests PRIVATE --coverage)
