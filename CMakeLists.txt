@@ -14,5 +14,5 @@ add_executable(runUnitTests tests/test.cpp)
 
 target_link_libraries(runUnitTests gtest gtest_main)
 add_test( runUnitTests runUnitTests )
-#target_compile_options(runUnitTests PRIVATE --coverage)
-#target_link_libraries(runUnitTests PRIVATE --coverage)
+target_compile_options(runUnitTests PRIVATE --coverage)
+target_link_libraries(runUnitTests PRIVATE --coverage)
