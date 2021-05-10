@@ -1,9 +1,5 @@
 language: cpp
 
-script:
-- cmake .
-- make
-- ./runUnitTests
 
 addons:
   apt:
@@ -13,3 +9,15 @@ addons:
       - cmake
       - cmake-data
       - mingw-w64
+
+before_install:
+  - pip install --user cpp-coveralls
+
+
+script:
+- cmake .
+- make
+- ./runUnitTests
+
+after_success:
+  - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*"
