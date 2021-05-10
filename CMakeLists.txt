@@ -3,7 +3,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(bank)
-
+SET(COVERAGE OFF CACHE BOOL "Coverage")
 enable_testing()
 add_subdirectory(third-party/gtest)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
@@ -14,3 +14,5 @@ add_executable(runUnitTests tests/test.cpp)
 
 target_link_libraries(runUnitTests gtest gtest_main)
 add_test( runUnitTests runUnitTests )
+target_compile_options(tests PRIVATE --coverage)
+target_link_libraries(tests PRIVATE --coverage)
