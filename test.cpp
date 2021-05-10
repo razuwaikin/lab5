@@ -82,7 +82,8 @@ TEST(Transaction, test7)
 	Account A1(1, 1000);
 	EXPECT_ANY_THROW(B.Make(A1, A1, 400));
 }
-int main(){
-	InitGoogleTest();
+int main(int argc, char *argv[])
+{
+	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
