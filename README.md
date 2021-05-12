@@ -32,7 +32,7 @@ target_link_libraries(runUnitTests PRIVATE --coverage gtest gtest_main)
 add_test( runUnitTests runUnitTests )
 ```
 
-## 2 Tests
+## Tests
 
 ```
 #include "Account.cpp"
